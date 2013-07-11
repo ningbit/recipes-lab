@@ -1,1 +1,6 @@
 <!-- A view that shows you all the ingredients in a recipe. -->
+<h1> Ta-da! </h1>
+<%= @recipe.name %>
+<% @recipe.ingredients.each do |ingredient| %>
+<%= ingredient.name %>
+<% end %>

@@ -1,6 +1,10 @@
-<h1><%= @ingredient.name %></h1>
+<p id="notice"><%= notice %></p>
 
-Used in:
-<ul>
-  <li>Recipe Name</li> <!-- This should link to the recipe show page -->
-</ul>
+<p>
+  <b>Name:</b>
+  <%= @ingredient.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

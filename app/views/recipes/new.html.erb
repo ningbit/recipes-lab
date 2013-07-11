@@ -12,21 +12,24 @@ If you get clever, you can have 1 text box behave both ways, capable of adding a
 
 -->
 
-<form>
+<form action="<%= recipes_path %>" method="POST">
   <p>
     <label>Recipe Name</label>
-    <input type="text">
+    <input type="text" name="name"/>
   </p>
 
   <p>
     <label>Ingredients</label>
-    <ul>
+<!--     <ul>
       <li><input></li>
       <li><input></li>
       <li><input></li>
       <li><input></li>
       <li><input></li>
-    </ul>
+    </ul> -->
+    <p>Put your fucking ingredients into this list. K. Thanks. Oh, and separate the ingredients by some fucking commas. K. Thanks. Betch.</p>
+    <textarea name="ingredient_list" rows ="2" cols = "100">
+    </textarea>
   </p>
 
   <p><input type="submit" /></p>
