@@ -1,0 +1,28 @@
+<script>
+
+  <% ingredient_array.each do |i| %>
+  // Adds pantry ingredient to ingredient list
+  $("#ingredient-<%=i%>").click(function(){
+  var htmlstring = $("h4#list").html();
+  var commastring
+  if (htmlstring == ""){commastring = "";}
+    else {commastring = ", ";}
+  $("h4#list").html(htmlstring + commastring + "<%=i%>");
+    $("#ingredient-<%=i%>").css('display','none');});
+
+  // reset ingredient list and restores pantry
+  $("#reset_ingredients").click(function(){
+    $("h4#list").html("");
+
+    if ($("#ingredient-<%=i%>").css('display')==='none'){
+      $("#ingredient-<%=i%>").fadeIn();
+    }
+  });
+
+  <%end%>
+  $("#ingredient-submit").click(function(){
+    var completed_list = $("h4#list").html();
+    $("#submitted-list").val(completed_list);
+  });
+
+</script>

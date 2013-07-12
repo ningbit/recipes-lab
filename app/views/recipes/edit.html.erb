@@ -7,14 +7,17 @@
 
   <!-- <textarea rows="3" cols="20" placeholder="Ingredients">
   </textarea> -->
-  <h1>Create a Recipe</h1>
-  <input style="padding: 10px; width:480px; margin-bottom:15px; margin-left:20px; font-size: 26px;" placeholder="Name" name="name"/><button type="submit" id="ingredient-submit" class="btn btn-success btn-large" style="margin:-15px 0 0 10px">Submit</button>
+  <h1>Edit:</h1>
+  <h1><%= @recipe.name %><button type="submit" id="ingredient-submit" class="btn btn-success btn-large" style="margin:-10px 0 0 20px">Submit</button></h1>
 
   </div>
   <div class="container-fluid">
     <div class="span5">
       <h3>Ingredients:</h3>
-      <h4 id="list"></h4>
+      <h4 id="list"><% @recipe.ingredients.each_with_index do |i,index| %>
+              <% comma_var = index < @recipe.ingredients.size ? "," : "" %>
+              <%= i.name + comma_var %>
+              <% end %></h4>
     </div>
     <div class="span5">
       <h3>Pantry: (Click to add)</h3>

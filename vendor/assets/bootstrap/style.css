@@ -1,0 +1,39 @@
+h1 {
+    margin-bottom:40px;
+}
+
+body.welcome {
+  background-image:url('tricycle.jpg');
+  opacity: 0.95;
+
+}
+
+body.show {
+  background-image:url('beach.jpg');
+  opacity: 0.96;
+
+}
+
+.show {
+  color:white;
+
+}
+
+h2.recipe {
+  display: inline;
+  position: relative;
+}
+
+.tile-index {
+  background: none;
+  margin-top: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+.add_new a {
+  color: white;
+  text-decoration: none;
+}
