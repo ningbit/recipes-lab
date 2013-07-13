@@ -9,7 +9,13 @@ class Ingredient < ActiveRecord::Base
   def self.add_cart(cart_list)
   	cart_list.uniq.each do |item|
         i = Ingredient.new(:name => item.downcase.strip)
-        i.save if !self.all.include?(i)
+        @item = Ingredient.find_by_name(item.downcase.strip)
+        if @item.nil?
+          i.save 
+        else
+          @item.updated_at = Time.now
+          @item.save
+        end
     end
   end
 

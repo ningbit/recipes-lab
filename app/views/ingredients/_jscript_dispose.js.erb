@@ -1,7 +1,7 @@
 <script>
 
-  <% ingredient_array.each do |i| %>
   // Adds pantry ingredient to disposal
+  <% ingredient_array.each do |i| %>
   $("#ingredient-<%=i.gsub(" ","_")%>").click(function(){
     $("*#dispose-display").fadeIn("fast");
     var htmlstring = $("h4#list").html();
@@ -11,17 +11,19 @@
     $("h4#list").html(htmlstring + "<%=i%><br>");
       $("#ingredient-<%=i.gsub(" ","_")%>").css('display','none');
   });
+  <%end%>
 
   // reset ingredient list and restores pantry
   $("#reset_ingredients").click(function(){
     $("h4#list").html("");
-
+    <% ingredient_array.each do |i| %>
     if ($("#ingredient-<%=i.gsub(" ","_")%>").css('display')==='none'){
-      $("#ingredient-<%=i.gsub(" ","_")%>").fadeIn();
-    }
+      $("#ingredient-<%=i.gsub(" ","_")%>").fadeIn();}
+    <%end%>
+    $("*#dispose-display").delay(4000).fadeOut(400)
   });
 
-  <%end%>
+  
   $("#dispose-list").click(function(){
     var completed_list = $("h4#list").html();
     $("#disposal_list").val(completed_list);

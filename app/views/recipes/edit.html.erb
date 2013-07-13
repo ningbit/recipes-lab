@@ -26,8 +26,8 @@
     <div class="span5">
       <h3>Pantry: (Click to add)</h3>
       <div class="well">
-        <% ingredient_array.each do |i| %>
-          <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i.gsub(" ","_")%>"><%=i%></p>
+        <% @ingredients.each do |i| %>
+          <p class="btn<%= " btn-primary" if i.updated_at - Time.now > -600 %>" style="margin-bottom:2px" id="ingredient-<%=i.name.gsub(" ","_")%>"><%=i.name%></p>
         <%end%>
       </div>
       <span class='btn btn-danger pull-right' style="margin-top:-10px; font-weight: 460" id='reset_ingredients'>Reset</span>

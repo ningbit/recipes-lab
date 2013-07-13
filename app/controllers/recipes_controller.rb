@@ -20,12 +20,12 @@ class RecipesController < ApplicationController
     end
 
     def new #View
-        @ingredients = Ingredient.all
+        @ingredients = Ingredient.all.sort_by { |e| e.name }
     end
 
     def edit
         @recipe= Recipe.find(params[:id])
-        @ingredients = Ingredient.all
+        @ingredients = Ingredient.all.sort_by { |e| e.name }
     end
 
     def update

@@ -2,7 +2,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients
   # GET /ingredients.json
   def index
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.sort_by { |e| e.name }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +24,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   # GET /ingredients/new.json
   def new
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.sort_by { |e| e.name }
 
     respond_to do |format|
       format.html # new.html.erb

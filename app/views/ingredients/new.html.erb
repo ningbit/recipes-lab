@@ -19,7 +19,7 @@
 	      </div>
 		    <div class="span3 pull-right" id="pantry-button">
 	        <span class='btn btn-danger pull-right' id='reset_ingredients'>Reset</span>
-	        <button type="submit" class='btn btn-success pull-right' id='cart-submit' style="margin-right:30px">$ Buy Cart</button>
+	        <button type="submit" class='btn btn-success pull-right' id='cart-submit' style="margin-right:15px">$ Buy Cart</button>
 	      </div>
         <div>
           <%= link_to "Back", ingredients_path %>
@@ -29,8 +29,8 @@
     <div class="span4">
       <h3>Your Pantry At Home:</h3>
       <div class="well">
-        <% ingredient_array.each do |i| %>
-          <p class="btn" style="margin-bottom:2px"><%=i%></p>
+        <% @ingredients.each do |i| %>
+          <p class="btn<%= " btn-primary" if i.updated_at - Time.now > -600 %>" style="margin-bottom:2px"><%=i.name%></p>
         <%end%>
       </div>
     </div>
