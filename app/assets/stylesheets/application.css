@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require ../../../vendor/assets/bootstrap/bootstrap.css
+ *= require ../../../vendor/assets/bootstrap/flat-ui.css
  *= require ../../../vendor/assets/bootstrap/style.css
 
  */

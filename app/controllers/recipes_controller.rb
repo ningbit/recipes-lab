@@ -29,6 +29,17 @@ class RecipesController < ApplicationController
     end
 
     def update
+        @recipe= Recipe.find(params[:id])
+        @recipe.ingredients = []
+        @ingredient_list = params[:ingredients_list].split(",").collect {|a| a.strip}
+        @recipe.add_ingredients(@ingredient_list)
+        @recipe.add_ingredients(@ingredient_list)
+        if @recipe.save
+            @recipes = Recipe.all
+            redirect_to @recipe
+        else
+            redirect_to edit_recipe_path(@recipe)
+        end
     end
 
     def destroy

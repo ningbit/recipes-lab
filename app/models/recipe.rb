@@ -7,7 +7,7 @@ class Recipe < ActiveRecord::Base
   def add_ingredients(ingredient_list)
     ingredient_list.uniq.each do |ingredient|
         i = Ingredient.where(:name => ingredient.downcase.strip).first_or_create
-        self.ingredients << i
+        self.ingredients << i if !self.ingredients.include?(i)
     end
   end
 end

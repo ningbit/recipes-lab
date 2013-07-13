@@ -1,0 +1,159 @@
+/* Use the following CSS code if you want to have a class per icon */
+/*Instead of a list of all class selectors,
+ *you can use the generic selector below, but it's slower:
+ *[class*="fui-"]:before { */
+.fui-volume-16:before, .fui-video-16:before, .fui-time-16:before, .fui-settings-16:before, .fui-plus-16:before, .fui-new-16:before, .fui-menu-16:before, .fui-man-16:before, .fui-mail-16:before, .fui-lock-16:before, .fui-location-16:before, .fui-heart-16:before, .fui-eye-16:before, .fui-cross-16:before, .fui-cmd-16:before, .fui-checkround-16:before, .fui-checkmark-16:before, .fui-camera-16:before, .fui-calendar-16:before, .fui-bubble-16:before {
+  font-family: "Flat-UI-Icons-16";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+.fui-volume-16:before {
+  content: "\e000"; }
+
+.fui-video-16:before {
+  content: "\e001"; }
+
+.fui-time-16:before {
+  content: "\e002"; }
+
+.fui-settings-16:before {
+  content: "\e003"; }
+
+.fui-plus-16:before {
+  content: "\e004"; }
+
+.fui-new-16:before {
+  content: "\e005"; }
+
+.fui-menu-16:before {
+  content: "\e006"; }
+
+.fui-man-16:before {
+  content: "\e007"; }
+
+.fui-mail-16:before {
+  content: "\e008"; }
+
+.fui-lock-16:before {
+  content: "\e009"; }
+
+.fui-location-16:before {
+  content: "\e00a"; }
+
+.fui-heart-16:before {
+  content: "\e00b"; }
+
+.fui-eye-16:before {
+  content: "\e00c"; }
+
+.fui-cross-16:before {
+  content: "\e00d"; }
+
+.fui-cmd-16:before {
+  content: "\e00e"; }
+
+.fui-checkround-16:before {
+  content: "\e00f"; }
+
+.fui-checkmark-16:before {
+  content: "\e010"; }
+
+.fui-camera-16:before {
+  content: "\e011"; }
+
+.fui-calendar-16:before {
+  content: "\e012"; }
+
+.fui-bubble-16:before {
+  content: "\e013"; }
+
+@font-face {
+  font-family: "Flat-UI-Icons-24";
+  src: url("../fonts/Flat-UI-Icons-24.eot");
+  src: url("../fonts/Flat-UI-Icons-24.eot?#iefix") format("embedded-opentype"), url("../fonts/Flat-UI-Icons-24.woff") format("woff"), url("../fonts/Flat-UI-Icons-24.ttf") format("truetype"), url("../fonts/Flat-UI-Icons-24.svg#Flat-UI-Icons-24") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.btn {
+  border: none;
+  background: #34495e;
+  color: white;
+  font-size: 16.5px;
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden; }
+  .btn:hover, .btn:focus {
+    background-color: #4e6d8d;
+    color: white;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden; }
+  .btn:active, .btn.active {
+    background-color: #2c3e50;
+    color: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+  .btn.disabled, .btn[disabled] {
+    background-color: #95a5a6;
+    color: white; }
+  .btn.btn-large {
+    padding-bottom: 12px;
+    padding-top: 13px; }
+  .btn.btn-primary {
+    background-color: #1abc9c; }
+    .btn.btn-primary:hover, .btn.btn-primary:focus {
+      background-color: #2fe2bf; }
+    .btn.btn-primary:active, .btn.btn-primary.active {
+      background-color: #16a085; }
+  .btn.btn-info {
+    background-color: #3498db; }
+    .btn.btn-info:hover, .btn.btn-info:focus {
+      background-color: #5dade2; }
+    .btn.btn-info:active, .btn.btn-info.active {
+      background-color: #2383c4; }
+  .btn.btn-danger {
+    background-color: #e74c3c; }
+    .btn.btn-danger:hover, .btn.btn-danger:focus {
+      background-color: #ec7063; }
+    .btn.btn-danger:active, .btn.btn-danger.active {
+      background-color: #dc2d1b; }
+  .btn.btn-success {
+    background-color: #2ecc71; }
+    .btn.btn-success:hover, .btn.btn-success:focus {
+      background-color: #55d98d; }
+    .btn.btn-success:active, .btn.btn-success.active {
+      background-color: #27ad60; }
+  .btn.btn-warning {
+    background-color: #f1c40f; }
+    .btn.btn-warning:hover, .btn.btn-warning:focus {
+      background-color: #f4d03f; }
+    .btn.btn-warning:active, .btn.btn-warning.active {
+      background-color: #cea70c; }
+  .btn-toolbar .btn {
+    font-size: 18px;
+    padding: 10px 14px 9px; }
+    .btn-toolbar .btn:first-child {
+      -webkit-border-radius: 6px 0 0 6px;
+      -moz-border-radius: 6px 0 0 6px;
+      border-radius: 6px 0 0 6px; }
+    .btn-toolbar .btn:last-child {
+      -webkit-border-radius: 0 6px 6px 0;
+      -moz-border-radius: 0 6px 6px 0;
+      border-radius: 0 6px 6px 0; }
+
+.btn-toolbar .btn.active {
+  color: white; }
+

@@ -24,6 +24,10 @@ h2.recipe {
   position: relative;
 }
 
+body {
+  padding-top: 20px;
+}
+
 .tile-index {
   background: none;
   margin-top: 5px;

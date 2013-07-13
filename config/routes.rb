@@ -3,7 +3,7 @@ RecipesLab::Application.routes.draw do
   resources :ingredients
   resources :recipes
 
-  root to: 'recipes#new'
+  root to: 'recipes#index'
 
 
   # The priority is based upon order of creation:

@@ -8,14 +8,16 @@
       <div class="row-fluid">
         <div class="span12 well">
           <h2 class="recipe"><%= recipe.name %>
-            <span style="font-weight: normal; font-size: 20px; width:100px; overflow:hidden">w/<% recipe.ingredients.each_with_index do |i,index| %>
+            <span style="font-weight: normal; font-size: 20px; width:100px; overflow:hidden">  <%= "w/" if recipe.ingredients.size > 0 %>
+              <% recipe.ingredients.each_with_index do |i,index| %>
               <% comma_var = index <= 2 ? "," : "..." %>
+              <% comma_var = "" if index >= recipe.ingredients.size-1 %>
               <%= i.name + comma_var %>
               <% break if index > 2 %>
               <% end %>
             </span></h2>
           <span class="tile pull-right tile-index">
-          <%= link_to 'Show', recipe, :class => "btn btn-info" %>
+          <%= link_to 'Recipe', recipe, :class => "btn btn-info" %>
           <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-warning" %>
           <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           </span>
@@ -24,8 +26,8 @@
     </li>
   <% end %>
     <li class="btn btn-success btn-large pull-right add_new">
-      <span class="fui-plus-16"></span>
-      <%= link_to 'New recipe', new_recipe_path %>
+      <span>+</span>
+      <%= link_to 'New Recipe', new_recipe_path %>
     </li>
   </ul>
 </div>
