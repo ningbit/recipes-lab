@@ -24,7 +24,7 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   # GET /ingredients/new.json
   def new
-    @ingredient = Ingredient.new
+    @ingredients = Ingredient.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,17 +40,9 @@ class IngredientsController < ApplicationController
   # POST /ingredients
   # POST /ingredients.json
   def create
-    @ingredient = Ingredient.new(params[:ingredient])
-
-    respond_to do |format|
-      if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
-        format.json { render json: @ingredient, status: :created, location: @ingredient }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
-      end
-    end
+    @ingredient_cart = params[:ingredients_list].split(",").collect {|a| a.strip}
+    Ingredient.add_cart(@ingredient_cart)
+    redirect_to ingredients_path
   end
 
   # PUT /ingredients/1
@@ -72,12 +64,8 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1
   # DELETE /ingredients/1.json
   def destroy
-    @ingredient = Ingredient.find(params[:id])
-    @ingredient.destroy
-
-    respond_to do |format|
-      format.html { redirect_to ingredients_url }
-      format.json { head :no_content }
-    end
+    @garbage = params[:disposal_list].split("<br>")
+    Ingredient.dispose_garbage(@garbage)
+    redirect_to ingredients_path
   end
 end

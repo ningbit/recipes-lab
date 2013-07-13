@@ -1,0 +1,27 @@
+<script>
+
+  // Adds pantry ingredient to ingredient list
+  $("#cart-add").click(function(){
+    var htmlstring = $("h4#list").html();
+    var newitem = $("#cart-item").val().toLowerCase();
+    var commastring
+    if (htmlstring == ""){commastring = "";}
+    else {commastring = ", ";}
+    if (/^[a-zA-Z ]*$/.test(newitem)){
+      $("h4#list").html(htmlstring + commastring + newitem);
+      $("#cart-item").val("");}
+    else {$("#shop-cart").effect("shake");}
+  });
+
+  // reset ingredient list and restores pantry
+  $("#reset_ingredients").click(function(){
+    $("h4#list").html("");
+    });
+
+  //submits list
+  $("#cart-submit").click(function(){
+    var completed_list = $("h4#list").html();
+    $("#submitted-list").val(completed_list);
+  });
+
+</script>

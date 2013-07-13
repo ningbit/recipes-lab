@@ -1,23 +1,38 @@
-<h1>Listing ingredients</h1>
+<% ingredient_array = @ingredients.collect {|i| i.name}.sort %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="container-fluid">
+  <div class="span12">
+    <h1>My Ingredients</h1>
+  </div>
+  <div class="container-fluid">  
+    <form id="submit-disposal" action="<%= ingredients_path %>" method="POST"> 
+    <input name="_method" type="hidden" value="delete" />
+    <input id="disposal_list" name="disposal_list" type="hidden" value=""/>
+      <div class="span8">
+        <h3>Your Pantry: (Click to dispose)</h3>
+        <div class="well">
+          <% ingredient_array.each do |i| %>
+            <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i.gsub(" ","_")%>"><%=i%></p>
+          <%end%>
+        </div>
+      </div>
+      <div class="span3" id="dispose-display">
+        <h3>Garbage Disposal:</h3>
+        <h4 id="list" style="text-align:right; color:#e74c3c"></h4>
+      </div>
+      <div class="span8" id="pantry-button">
+        <span class='btn btn-info pull-right' id='go-shopping'><a href="<%= new_ingredient_path%>">Go Shopping!</a></span>
+      </div>
+      <div class="span3" id="dispose-display">
+        <button class='btn btn-danger pull-right' id="dispose-list">Dispose</button><span class='btn btn-success pull-right' id='reset_ingredients' style="margin-right:10px">Cancel</span>
+      </div>
+    </form>
+  </div>
+  <div class="span12">
+    <br /><br />
+  <%= link_to "Back to Recipes", recipes_path %>
+  </div>
+</div>
 
-<% @ingredients.each do |ingredient| %>
-  <tr>
-    <td><%= ingredient.name %></td>
-    <td><%= link_to 'Show', ingredient %></td>
-    <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-    <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= render :partial => 'jscript_dispose', :formats=>[:js], :locals => {:ingredient_array => ingredient_array }%>
+   

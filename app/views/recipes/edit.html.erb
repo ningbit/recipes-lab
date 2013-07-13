@@ -21,16 +21,22 @@
               <%= i.name + comma_var %>
               <% end %></h4>
     </div>
+    <div class="span2">
+    </div>
     <div class="span5">
       <h3>Pantry: (Click to add)</h3>
       <div class="well">
         <% ingredient_array.each do |i| %>
-          <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i%>"><%=i%></p>
+          <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i.gsub(" ","_")%>"><%=i%></p>
         <%end%>
       </div>
       <span class='btn btn-danger pull-right' style="margin-top:-10px; font-weight: 460" id='reset_ingredients'>Reset</span>
     </div>
   </div>
 </form>
+<div class="span12">
+  <%= link_to "Back to Recipes", recipes_path %>
 </div>
+</div>
+
     <%= render :partial => 'jscript_edit', :formats=>[:js], :locals => {:ingredient_array => ingredient_array, :i_list => i_list }%>

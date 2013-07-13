@@ -5,10 +5,8 @@
   <input id="submitted-list" type="hidden" name="ingredients_list" value=""/>
   <div class="span12">
 
-  <!-- <textarea rows="3" cols="20" placeholder="Ingredients">
-  </textarea> -->
   <h1>Create a Recipe</h1>
-  <input style="padding: 10px; width:480px; margin-bottom:15px; margin-left:20px; font-size: 26px;" placeholder="Name" name="name"/><button type="submit" id="ingredient-submit" class="btn btn-success btn-large" style="margin:-15px 0 0 10px">Submit</button>
+  <input id="create-input" placeholder="Name" name="name"/><button type="submit" id="ingredient-submit" class="btn btn-success btn-large">Submit</button>
 
   </div>
   <div class="container-fluid">
@@ -16,16 +14,25 @@
       <h3>Ingredients:</h3>
       <h4 id="list"></h4>
     </div>
+    <div class="span2">
+    </div>
     <div class="span5">
       <h3>Pantry: (Click to add)</h3>
       <div class="well">
         <% ingredient_array.each do |i| %>
-          <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i%>"><%=i%></p>
+          <p class="btn" style="margin-bottom:2px" id="ingredient-<%=i.gsub(" ","_")%>"><%=i%></p>
         <%end%>
+
       </div>
-      <span class='btn btn-danger pull-right' style="margin-top:-10px; font-weight: 460" id='reset_ingredients'>Reset</span>
+      <div class="span3 pull-right" id="pantry-button">
+        <span class='btn btn-info' id='go-shopping'><a href="<%= new_ingredient_path%>">Go Shopping!</a></span>
+        <span class='btn btn-danger pull-right' id='reset_ingredients'>Reset</span>
+      </div>
     </div>
   </div>
 </form>
+</div>
+<div class="span12">
+  <%= link_to "Back to Recipes", recipes_path %>
 </div>
     <%= render :partial => 'jscript', :formats=>[:js], :locals => {:ingredient_array => ingredient_array}%>

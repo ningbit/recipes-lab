@@ -1,13 +1,13 @@
 <div class="container-fluid">
 
-  <h1>My Lovely Recipes</h1>
+  <h1>My Lovely Recipe Book</h1>
 
   <ul>
   <% @recipes.each do |recipe| %>
       <li class="row_fluid">
       <div class="row-fluid">
         <div class="span12 well">
-          <h2 class="recipe"><%= recipe.name %>
+          <h2 class="recipe"><%= link_to recipe.name, recipe %>
             <span style="font-weight: normal; font-size: 20px; width:100px; overflow:hidden">  <%= "w/" if recipe.ingredients.size > 0 %>
               <% recipe.ingredients.each_with_index do |i,index| %>
               <% comma_var = index <= 2 ? "," : "..." %>
@@ -29,5 +29,9 @@
       <span>+</span>
       <%= link_to 'New Recipe', new_recipe_path %>
     </li>
+    <li class="btn btn-default btn-large pull-right add_new" style="margin-right:10px">
+      <%= link_to 'Ingredients List', ingredients_path %>
+    </li>
+
   </ul>
 </div>

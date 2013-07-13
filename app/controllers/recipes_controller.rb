@@ -46,6 +46,6 @@ class RecipesController < ApplicationController
         @recipe= Recipe.find(params[:id])
         @recipe.destroy
         @recipes = Recipe.all
-        render :index
+        redirect_to recipes_path
     end
 end

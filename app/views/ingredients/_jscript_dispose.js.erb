@@ -1,14 +1,16 @@
 <script>
 
   <% ingredient_array.each do |i| %>
-  // Adds pantry ingredient to ingredient list
+  // Adds pantry ingredient to disposal
   $("#ingredient-<%=i.gsub(" ","_")%>").click(function(){
-  var htmlstring = $("h4#list").html();
-  var commastring
-  if (htmlstring == ""){commastring = "";}
-    else {commastring = ", ";}
-  $("h4#list").html(htmlstring + commastring + "<%=i%>");
-    $("#ingredient-<%=i.gsub(" ","_")%>").css('display','none');});
+    $("*#dispose-display").fadeIn("fast");
+    var htmlstring = $("h4#list").html();
+    var commastring
+    if (htmlstring == ""){commastring = "";}
+      else {commastring = ", ";}
+    $("h4#list").html(htmlstring + "<%=i%><br>");
+      $("#ingredient-<%=i.gsub(" ","_")%>").css('display','none');
+  });
 
   // reset ingredient list and restores pantry
   $("#reset_ingredients").click(function(){
@@ -20,9 +22,9 @@
   });
 
   <%end%>
-  $("#ingredient-submit").click(function(){
+  $("#dispose-list").click(function(){
     var completed_list = $("h4#list").html();
-    $("#submitted-list").val(completed_list);
+    $("#disposal_list").val(completed_list);
   });
 
 </script>

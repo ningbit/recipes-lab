@@ -1,4 +1,5 @@
 h1 {
+    padding-top:20px;
     margin-bottom:40px;
 }
 
@@ -24,13 +25,17 @@ h2.recipe {
   position: relative;
 }
 
+h2.ingredient {
+  font-size: 40px;
+}
+
 body {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 .tile-index {
   background: none;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 ul {
@@ -40,4 +45,37 @@ ul {
 .add_new a {
   color: white;
   text-decoration: none;
+}
+
+#ingredient-submit {
+  margin:-15px 0 0 10px;
+}
+
+#create-input {
+  padding: 10px; 
+  width:480px; 
+  margin-bottom:15px; 
+  margin-left:20px; 
+  font-size: 26px;
+}
+
+#pantry-button {
+  font-weight: 460;
+}
+
+#pantry-button a {
+  color: white;
+}
+
+#pantry-button a:hover {
+  text-decoration: none;
+}
+
+.container-fluid {
+  max-width: 1000px;
+  min-width: 1000px
+}
+
+#dispose-display {
+  display:none;
 }

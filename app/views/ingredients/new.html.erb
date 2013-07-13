@@ -1,5 +1,41 @@
-<h1>New ingredient</h1>
+<% ingredient_array = @ingredients.collect {|i| i.name}.sort %>
 
-<%= render 'form' %>
+<div class="container-fluid">
+  <div class="span12">
 
-<%= link_to 'Back', ingredients_path %>
+  <h1>Let's Shop!</h1>
+  <h2 class="ingredient">My Local Marketplace</h2>
+
+  </div>
+  <div class="container-fluid"> 	
+    <div class="span8">
+      <form action="javascript:void(0);">
+      	<h3 id="shop-cart">Shopping Cart:<input id="cart-item" value="" style="margin-left: 5px" placeholder="Item name"/><button class='btn btn-info' id='cart-add' style="margin-left:5px" >Add</button></h3>
+      </form>
+    	<form action="<%= ingredients_path %>" method="POST">
+  			<input id="submitted-list" type="hidden" name="ingredients_list" value=""/>
+	      <div class="well" style="min-height:200px">
+	      	<h4 id="list"></h4>
+	      </div>
+		    <div class="span3 pull-right" id="pantry-button">
+	        <span class='btn btn-danger pull-right' id='reset_ingredients'>Reset</span>
+	        <button type="submit" class='btn btn-success pull-right' id='cart-submit' style="margin-right:30px">$ Buy Cart</button>
+	      </div>
+        <div>
+          <%= link_to "Back", ingredients_path %>
+        </div>
+	    </form>
+    </div>  
+    <div class="span4">
+      <h3>Your Pantry At Home:</h3>
+      <div class="well">
+        <% ingredient_array.each do |i| %>
+          <p class="btn" style="margin-bottom:2px"><%=i%></p>
+        <%end%>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <%= render :partial => 'jscript', :formats=>[:js]%>

@@ -3,6 +3,8 @@ RecipesLab::Application.routes.draw do
   resources :ingredients
   resources :recipes
 
+  delete '/ingredients' => "ingredients#destroy"
+
   root to: 'recipes#index'
 
 
