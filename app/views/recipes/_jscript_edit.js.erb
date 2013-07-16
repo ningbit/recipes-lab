@@ -30,4 +30,13 @@
     $("#submitted-list").val(completed_list);
   });
 
+  $("#undo-button").click(function(){
+    location.reload();
+  });
+
+  $(window).unload(function() {
+    window.location.reload();
+    alert("page has reloaded");
+  });
+
 </script>

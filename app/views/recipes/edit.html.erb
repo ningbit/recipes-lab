@@ -30,7 +30,12 @@
           <p class="btn<%= " btn-primary" if i.updated_at - Time.now > -600 %>" style="margin-bottom:2px" id="ingredient-<%=i.name.gsub(" ","_")%>"><%=i.name%></p>
         <%end%>
       </div>
-      <span class='btn btn-danger pull-right' style="margin-top:-10px; font-weight: 460" id='reset_ingredients'>Reset</span>
+      <div class="span5" id="pantry-button">
+        <span class='btn btn-danger pull-right' style="font-weight: 460; margin-left:10px" id='reset_ingredients'>Reset</span>
+        <span class='btn btn-warning pull-right' id="undo-button" style="font-weight: 460; margin-left:10px" id='go-shopping'>Undo</span>
+        <span class='btn btn-info pull-right' id='go-shopping'><a href="<%= new_ingredient_path%>">Go Shopping!</a></span>   
+      </div>
+
     </div>
   </div>
 </form>
